@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOSO - WatchList </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>SOSO - WatchList</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" id="search-nav">Search</a></li>
+                    <li><a href="#" id="watchlist-nav">My Watch List</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="search-section" class="active">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search for movies, TV shows, or series...">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+
+                <div class="filter-container">
+                    <button class="filter-button active" data-type="all">All</button>
+                    <button class="filter-button" data-type="movie">Movies</button>
+                    <button class="filter-button" data-type="tv">TV Shows</button>
+                </div>
+
+                <div id="results-container">
+                    <div class="results-message">Search for movies and TV shows to add to your watch list</div>
+                </div>
+
+                <div class="loading-spinner" id="loading-spinner">
+                    <div class="spinner"></div>
+                </div>
+            </section>
+
+            <section id="watchlist-section">
+                <div class="watchlist-header">
+                    <h2>My Watch List</h2>
+                    <div class="watchlist-filter">
+                        <button class="filter-button active" data-list-type="all">All</button>
+                        <button class="filter-button" data-list-type="movie">Movies</button>
+                        <button class="filter-button" data-list-type="tv">TV Shows</button>
+                    </div>
+                </div>
+                <div id="watchlist-container">
+                    <div class="empty-watchlist">Your watch list is empty. Start adding items!</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Created By Mizzy <i class="fas fa-heart"></i></p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/mizzy.in4k/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/AkaMizzy" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/hamza-zily-5a9270302/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <template id="item-template">
+        <div class="item-card">
+            <div class="poster-container">
+                <img src="" alt="" class="poster">
+            </div>
+            <div class="item-details">
+                <h3 class="title"></h3>
+                <div class="meta">
+                    <span class="year"></span>
+                    <span class="type"></span>
+                    <span class="rating"><i class="fas fa-star"></i> <span class="rating-value"></span></span>
+                </div>
+                <p class="overview"></p>
+                <div class="actions">
+                    <button class="add-button"><i class="fas fa-plus"></i> Add to Watch List</button>
+                    <button class="remove-button"><i class="fas fa-trash"></i> Remove from Watch List</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
